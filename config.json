@@ -1,0 +1,86 @@
+{
+  "calibration": {
+    "CAST": {
+      "x": 0.596475,
+      "y": 0.394089,
+      "w": 0.021336,
+      "h": 0.321264
+    },
+    "SHAKE": {
+      "x": 0.050675,
+      "y": 0.055514,
+      "w": 0.895176,
+      "h": 0.866708
+    },
+    "REEL": {
+      "x": 0.294991,
+      "y": 0.828325,
+      "w": 0.409091,
+      "h": 0.049425
+    }
+  },
+  "shake": {
+    "threshold": 0.75,
+    "click_delay": 0.15,
+    "auto_click": true,
+    "first_button_timeout": 8.0,
+    "finish_after": 2.0,
+    "move_settle": 0.05,
+    "click_hold": 0.06
+  },
+  "cast": {
+    "hold_seconds": 0.5
+  },
+  "reel": {
+    "active_threshold": 0.55,
+    "inactive_threshold": 0.3,
+    "confirm_frames": 5,
+    "inactive_confirm_frames": 10
+  },
+  "tracking": {
+    "fish_threshold": 0.6,
+    "bar_threshold": 0.5,
+    "max_jump": 0.3
+  },
+  "reel_tracking": {
+    "region_width": 786,
+    "fish_band": [
+      0.0,
+      1.0
+    ],
+    "bar_band": [
+      0.08,
+      1.0
+    ],
+    "fish_width": 0.010178117048346057,
+    "bar_width": 0.42748091603053434,
+    "fish_color": {
+      "hex": "#434B5B",
+      "tolerance": 30
+    },
+    "bar_color": {
+      "hex": "#F1F1F1",
+      "tolerance": 40
+    }
+  },
+  "catch": {
+    "threshold": 0.75,
+    "confirm_frames": 3,
+    "verify_timeout": 3.0
+  },
+  "reel_control": {
+    "kp": 1.0,
+    "kd": 0.2,
+    "deadzone": 0.02,
+    "hysteresis": 0.02,
+    "prediction_time": 0.08,
+    "min_input_interval": 0.03,
+    "sticky_distance": 0.05,
+    "sticky_interval": 0.015,
+    "lost_grace": 0.15,
+    "hold_moves_right": true
+  },
+  "app": {
+    "auto_hide": true
+  }
+}
