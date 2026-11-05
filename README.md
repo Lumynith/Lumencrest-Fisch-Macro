@@ -1,4 +1,4 @@
-# Lumencrest — Fisch Macro
+# Lumencrest - Fisch Macro
 
 A Windows desktop macro for **Fisch on Roblox**, featuring visual SHAKE detection, automatic reeling, and a clean, hotkey-driven interface. 
 
