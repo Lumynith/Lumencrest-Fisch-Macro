@@ -1,0 +1,42 @@
+
+name: Discord Commit Updates
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Discord notification
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          MESSAGE: ${{ github.event.head_commit.message }}
+          AUTHOR: ${{ github.event.head_commit.author.name }}
+          URL: ${{ github.event.head_commit.url }}
+          REPO: ${{ github.repository }}
+        run: |
+          jq -n \
+            --arg repo "$REPO" \
+            --arg message "$MESSAGE" \
+            --arg author "$AUTHOR" \
+            --arg url "$URL" \
+            '{
+              embeds: [{
+                title: "New GitHub Commit",
+                description: $message,
+                url: $url,
+                color: 10181046,
+                fields: [
+                  {name: "Repository", value: $repo},
+                  {name: "Author", value: $author}
+                ],
+                footer: {text: "Lumencrest Development"}
+              }]
+            }' > payload.json
+
+          curl -fsS -H "Content-Type: application/json" \
+            -d @payload.json "$WEBHOOK"
